@@ -1,0 +1,139 @@
+<html >
+<head>
+    <title>ASignment 3</title>
+</head>
+<body>
+    <center>
+        <h1>Registration Form</h1>
+    </center>
+    
+    <div style="display: flex; float: right; height: 300px; width: 300px; margin-right: 20%;">
+        <form action="somecodeonserverside" onsubmit="return validateForm()">
+            <table>
+                <tr>
+                    <td> Name :</td>
+                    <td > <input type="text" placeholder="Enter Name" id="name"></td>
+                    <td>
+                    <div style="width: 200px; color: red" id="errorDiv1"></div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td> BirthDate </td>
+                    <td > <input type="date" placeholder="dd/MM/yyyy" id="birthdate"></td>
+                    <td>
+                    <div style="width: 200px; color: red" id="errorDiv2"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td> Email </td>
+                    <td > <input type="email" placeholder="abc@gmail.com"></td>
+                    
+                </tr>
+                <tr>
+                    <td> Password</td>
+                    <td > <input type="password" placeholder="******"></td>
+                    <td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td colspan="2"> <label for="State"></label>
+                        <select name="State" id="State">
+                            <option value="1">Maharashtra</option>
+                            <option value="2">Gujrat</option>
+                            <option value="3">Karnataka</option>
+                    </select>
+                
+                     <label for="District"></label>
+                        <select name="District" id="District">
+                            <option value="1">Pune</option>
+                            <option value="2">Surat</option>
+                            <option value="3">Bengaluru</option>
+                        </select>
+                
+                    <label for="City"></label>
+                        <select name="City" id="City">
+                            <option value="1">Pune</option>
+                            <option value="2">Surat</option>
+                            <option value="3">Bengalore</option>
+
+                        </select>
+                
+                    </td>
+                </tr>
+                <tr> 
+                    <td>Gender</td>
+                    <td colspan="2"> 
+                            <input type="radio" name="gender" value="1" /> Female
+                            <input type="radio" name="gender" value="2" /> Male
+                            <input type="radio" name="gender" value="3" /> Other
+            
+                    </td>
+                </tr>
+                <tr>
+                    <td> Upload Photo</td>
+                    <td> <input type="file"></td>
+                </tr>
+                <tr>
+                    <td>Select your course</td>
+                    <td>
+                        <label for="Course"></label>
+                        <select name="course" id="course">
+                            <option value="1">DAC</option>
+                            <option value="2">DBDA</option>
+                            <option value="3">DMC</option>
+
+                        </select>
+                    </td>
+                </tr>
+                <center>
+                    <tr>
+                        <td><input type="submit"></td>
+                        <td><input type="reset"></td>
+
+                    </tr>
+                </center>
+
+
+            </table>
+
+        </form>
+    </div>
+    <div style="display: flex; height: 300px; width: 300px; margin-left: 10%; ">
+        <img src="http://127.0.0.1:5500/sunbeam.jpg">
+    </div>
+
+    <script>
+
+    function validateForm() {
+        
+            var name = document.getElementById("name").value;
+            var birthdate = document.getElementById("birthdate").value;
+            var errorDiv1 = document.getElementById("errorDiv1");
+            var errorDiv2 = document.getElementById("errorDiv2");
+          
+            var isValid = true;
+
+            if (name == "") {
+                errorDiv1.innerHTML = "Please enter your name.";
+                isValid = false;
+            } else {
+                errorDiv1.innerHTML = "";
+            }
+
+            if (birthdate == "") {
+                errorDiv2.innerHTML = "Please enter your birthdate.";
+                isValid = false;
+            } else {
+                errorDiv2.innerHTML = "";
+            }
+
+            return isValid;
+
+    }
+
+    
+</script>
+
+</body>
+</html>
